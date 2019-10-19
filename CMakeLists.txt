@@ -16,7 +16,9 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_FLAGS "-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti")
 set(CMAKE_C_FLAGS "-ffreestanding -O2 -Wall -Wextra")
 
-add_executable(MyOS.bin mylib.c boot.s kernel.cpp)
+add_library(mylib mylib.c)
+
+add_executable(MyOS.bin boot.s kernel.cpp mylib)
 set_target_properties(MyOS.bin PROPERTIES LINK_FLAGS "-T ${CMAKE_SOURCE_DIR}/linker.ld -ffreestanding -O2 -nostdlib -lgcc")
 
 add_custom_target(MyOS.iso ALL

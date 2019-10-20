@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="GDB Remote Kernel Debugging" type="CLion_Remote" remoteCommand="tcp:localhost:1234" symbolFile="$PROJECT_DIR$/cmake-build-debug/MyOS.bin" sysroot="">
+  <configuration default="false" name="GDB Remote Kernel Debugging" type="CLion_Remote" remoteCommand="tcp:localhost:1234" symbolFile="$PROJECT_DIR$/bin/MyOS.bin" sysroot="">
     <method v="2">
       <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_ST in Debug" />
     </method>

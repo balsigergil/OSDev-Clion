@@ -7,4 +7,6 @@ menuentry "MyOS" {
 	multiboot /boot/MyOS.bin
 }' > isodir/boot/grub/grub.cfg
 grub-mkrescue -o MyOS.iso isodir
+mkdir -p bin
+mv MyOS.iso bin
 rm -rf isodir

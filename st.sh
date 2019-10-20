@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-qemu-system-i386 -kernel cmake-build-debug/MyOS.bin
+qemu-system-i386 $1 $2 -kernel bin/MyOS.bin &

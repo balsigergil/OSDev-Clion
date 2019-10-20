@@ -20,9 +20,11 @@ add_library(mylib mylib.c)
 
 add_executable(MyOS.bin boot.s kernel.cpp mylib)
 set_target_properties(MyOS.bin PROPERTIES LINK_FLAGS "-T ${CMAKE_SOURCE_DIR}/linker.ld -ffreestanding -O2 -nostdlib -lgcc")
+install(TARGETS MyOS.bin
+        RUNTIME
+        DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 
 add_custom_target(MyOS.iso ALL
-        COMMAND ./generate-iso.sh
-        COMMENT "Generating the kernel bootable iso file"
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+        COMMAND ../generate-iso.sh
+        COMMENT "Generating the kernel bootable iso file")
 add_dependencies(MyOS.iso MyOS.bin)
